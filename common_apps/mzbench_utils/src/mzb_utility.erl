@@ -14,9 +14,9 @@
     cast_to_type/2
    ]).
 
-random_binary(N) -> crypto:rand_bytes(N).
+random_binary(N) -> crypto:strong_rand_bytes(N).
 
-random_list(N) -> erlang:binary_to_list(crypto:rand_bytes(N)).
+random_list(N) -> erlang:binary_to_list(crypto:strong_rand_bytes(N)).
 
 random_string(N) -> base64:encode_to_string(crypto:strong_rand_bytes(N)).
 
